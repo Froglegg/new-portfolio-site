@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat|Poppins&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7b1798d8eb.js" async defer></script>
     <script src="scripts/nav.js" async defer></script>
+    <script src="scripts/accordion.js" async defer></script>
+
 </head>
 
 <body>
@@ -41,27 +43,99 @@
         <h1>Portfolio</h1>
     </div>
     <article id="main">
-            <h2>Hello! My name is Hayes. I built this site from scratch.</h2>
-        <section class="row">
-            <section class="column">
-                <img src="images/profile-5.jpg" id="profile-image">
-            </section>
-            <section class="column">
-                <p>I'm a bit of a generalist and have a broad skill set, including full-stack web development, technical
-                    writing, web analytics and content strategy. I've often found myself working closely with both
-                    digital and marketing teams, and often as conduit between the two. I also have some <a
-                        href="images/turco4.jpg">wicked photoshop
-                        skills.</a>
-                </p>
-                <p>View samples of <a href="portfolio.html">projects I've worked on</a> and <a href="cv.html">review my
-                        resumé.</a> <a href="contact.html">Send me a message here</a> if you'd like to chat.</p>
-            </section>
-        </section>
+        <button class="accordion">
+
+            Websites</button>
+
+        <div class="panel">
+
+            <form>
+
+                <br>
+
+                <input class="accordion" type="button" value="Scale x Design" onclick="window.open('http://sxdaccelerator.care.org')" />
+
+                <input class="accordion" type="button" value="Center for Community Transitions" onclick="window.open('http://www.centerforcommunitytransitions.org')" />
+
+                <input class="accordion" type="button" value="Assurant Asia Landing Page" onclick="window.open('http://www.assurant.sg')" />
+                <!-- eventually add UK pages you built, here <input class="accordion" type="button" value="UK site I built" onclick="window.open('http://www.centerforcommunitytransitions.org')" /> -->
+
+                <input class="accordion" type="button" value="CARE Switzerland" onclick="window.open('https://www.care-international.ch/')" />
+
+                <input class="accordion" type="button" value="CARE's World of Impact" onclick="window.open('http://worldofimpact.care.org/stories')" />
+
+            </form>
+
+        </div>
+
+        <button class="accordion">Digital Projects</button>
+
+        <div class="panel">
+
+            <form>
+
+                <br>
+
+                <input class="accordion" type="button" value="Automating with Python" onclick="window.open('https://github.com/Froglegg/budou_file_output','_self')" />
+
+                <input class="accordion" type="button" value="PHP/SQL Storybook" onclick="window.open('storybook.php','_self')" />
+
+                <input class="accordion" type="button" value="API Calls with PHP" onclick="window.open('api.php','_self')" />
+
+                <input class="accordion" type="button" value="PHP/SQL PCT Book List" onclick="window.open('books.php','_self')" />
+
+                <input class="accordion" type="button" value="JQuery Questionnaire" onclick="window.open('quiz.php','_self')" />
+
+                <input class="accordion" type="button" value="Javascript Magic 8 Ball" onclick="window.open('8ball.php','_self')" />
+
+                <input class="accordion" type="button" value="Javascript Slot Machine" onclick="window.open('slotmachine.php','_self')" />
+
+                <input class="accordion" type="button" value="CSS Spooky Ghost" onclick="window.open('spooky-ghost.php','_self')" />
+
+                <input class="accordion" type="button" value="Swamp Wars Scratch Game" onclick="window.open('http://scratch.mit.edu/projects/303546804/','_self')" />
+
+                <input class="accordion" type="button" value="View my Codepen" onclick="window.open('https://codepen.io/froglegg/')" />
+
+                <input class="accordion" type="button" value="View my Git" onclick="window.open('https://github.com/Froglegg')" />
+            </form>
+
+        </div>
+
+        <button class="accordion">
+            
+            Documentation/Copywriting</button>
+
+        <div class="panel">
+
+            <form>
+
+                <br>
+
+                <input class="accordion" type="button" value="A.com Sharepoint Documentation" onclick="window.open('files/docs/assurant-technical-documentation.pdf')" />
+
+                <input class="accordion" type="button" value="Copywriting for AEC" onclick="window.open('files/docs/aec_copywriting.pdf')" />
+
+                <input class="accordion" type="button" value="Team Briefs for Scale X Design" onclick="window.open('files/docs/team_briefs.pdf')" />
+
+                <input class="accordion" type="button" value="CARE Human Interest Stories" onclick="window.open('files/docs/editing_sample.pdf')" />
+
+                <input class="accordion" type="button" value="CARE Grant Proposal" onclick="window.open('files/docs/acard.pdf')" />
+
+                <input class="accordion" type="button" value="Content-Editor Guide" onclick="window.open('files/docs/user_guide.pdf')" />
+
+                <input class="accordion" type="button" value="Master's Thesis: Thru-hiking and Why People Do It" onclick="window.open('https://scholarworks.gsu.edu/english_theses/229/')" />
+
+                <input class="accordion" type="button" value="English 1101 Syllabus (.doc)" onclick="window.open('files/docs/1101_syllabus.doc')" />
+
+            </form>
+
+        </div>
     </article>
-    <footer>
-            <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
-            <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
-        </footer>
+    <footer class="fixed">
+        <br>
+        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
+        <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
+    </footer>
 </body>
 
 </html>

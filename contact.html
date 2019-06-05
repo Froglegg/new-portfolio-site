@@ -41,27 +41,30 @@
         <h1>Contact</h1>
     </div>
     <article id="main">
-            <h2>Hello! My name is Hayes. I built this site from scratch.</h2>
-        <section class="row">
-            <section class="column">
-                <img src="images/profile-5.jpg" id="profile-image">
-            </section>
-            <section class="column">
-                <p>I'm a bit of a generalist and have a broad skill set, including full-stack web development, technical
-                    writing, web analytics and content strategy. I've often found myself working closely with both
-                    digital and marketing teams, and often as conduit between the two. I also have some <a
-                        href="images/turco4.jpg">wicked photoshop
-                        skills.</a>
-                </p>
-                <p>View samples of <a href="portfolio.html">projects I've worked on</a> and <a href="cv.html">review my
-                        resumé.</a> <a href="contact.html">Send me a message here</a> if you'd like to chat.</p>
-            </section>
-        </section>
+        <div>
+
+            <form id="contactform" action="contact.php" method="post">
+
+                <p1>Name:<br/><input name="name" type="text" required /></p>
+
+                    <p1>Company Name: <br/><input name="company_name" type="text" /></p>
+
+                        <p1>Email: <br/><input name="email" type="email" required/></p>
+
+                            <p1>Message: <br/><textarea name="comments" required/> </textarea>
+                                </p>
+
+                                <input type="submit" name="submit" value="Send!" />
+
+            </form>
+
+        </div>
     </article>
     <footer>
-            <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
-            <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
-        </footer>
+        <br>
+        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
+        <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
+    </footer>
 </body>
 
 </html>

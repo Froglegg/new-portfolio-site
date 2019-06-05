@@ -1,4 +1,5 @@
 /* global fonts*/
+
 p {
     font-family: 'karla', sans-serif;
     font-size: 16px;
@@ -20,7 +21,8 @@ h2 {
     letter-spacing: 0.1em;
 }
 
-/* links */ 
+
+/* links */
 
 a {
     color: lightseagreen;
@@ -36,6 +38,7 @@ a:hover {
 a:active {
     color: rgb(41, 214, 206);
 }
+
 
 /* layout */
 
@@ -61,7 +64,6 @@ a:active {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 100px;
-
 }
 
 section {
@@ -79,19 +81,26 @@ section {
     height: auto;
 }
 
+
 /* sticky footer from old site */
-  /* .push {
+
+
+/* .push {
     height: 50px;
   } */
 
+
 /* Images */
+
 #profile-image {
     height: auto;
     width: 80%;
 }
 
+
 /* Footer  */
-/* footer {
+
+footer.fixed {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -99,7 +108,8 @@ section {
     background-color: rgb(34, 34, 34);
     color: lightskyblue;
     text-align: center;
-} */
+}
+
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -111,20 +121,19 @@ footer {
     color: lightskyblue;
 }
 
+
 /* Media Queries */
+
 @media only screen and (max-width:768px) {
     #main {
         width: 90%;
     }
-
     .column {
         flex: 100%;
     }
-
     #profile-image {
         width: 100%;
     }
-
     section {
         margin: 5px 0px 15px 0px;
     }
@@ -133,7 +142,9 @@ footer {
     }
 }
 
+
 /* Accordion styles */
+
 .accordion {
     background-color: #3AAFA9;
     color: #17252A;
