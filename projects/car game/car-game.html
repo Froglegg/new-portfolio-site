@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Car game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .userHighlight {
+            border: 2px blue solid;
+        }
+        
+        .computerHighlight {
+            border: 2px red solid;
+        }
+        
+        .rps-image {
+            border: 2px rgb(206, 206, 206) solid;
+        }
+        .hidden {
+            display:none;
+        }
+        .show {
+            display:block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container">
+        <h1>Welcome to the Car Game!</h1>
+        <p>Play against an unfeeling machine! The stakes are incredibly low!</p>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col">
+                <img id="driveToWork" src="drive_to_work.jfif" class="hidden">
+            </div>
+            <div class="col">
+                <img id="rideTheWorld" src="drive_around_the_world.jfif" class="hidden">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col">
+                <img id="honk" src="honk.jfif" class="hidden">
+            </div>
+            <div class="col">
+                <img id="tuneUp" src="tune_up.jfif" class="hidden">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="car.driveToWork()">Go to work</button>
+                <button type="button" class="btn btn-primary" onclick="car.driveAroundWorld()">Ride the world</button>
+                <button type="button" class="btn btn-primary" onclick="car.getTuneUp()">Tune up</button>
+                <button type="button" class="btn btn-primary" onclick="car.honk()">Honk!!!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var driveToWork = document.getElementById("driveToWork");
+        var rideTheWorld = document.getElementById("rideTheWorld");
+        var honk = document.getElementById("honk");
+        var tuneUp = document.getElementById("tuneUp");
+
+        var car = {
+          make: "Hyundai",
+          model: "Excel",
+          color: "Blue Raspberry",
+          mileage: 3000,
+          isWorking: true,
+  
+          driveToWork: function() {
+            
+            driveToWork.classList.remove('hidden');
+	        driveToWork.classList.add('show');
+  
+            alert("Old Mileage: " + this.mileage);
+  
+            this.mileage = this.mileage + 8;
+  
+            alert("New mileage: " + this.mileage);
+          },
+  
+          driveAroundWorld: function() {
+
+            rideTheWorld.classList.remove('hidden');
+	        rideTheWorld.classList.add('show');
+  
+            alert("Old Mileage: " + this.mileage);
+  
+            this.mileage = this.mileage + 24000;
+  
+            alert("New Mileage: " + this.mileage);
+            alert("Car needs a tuneup!");
+  
+            this.isWorking = false;
+          },
+  
+          getTuneUp: function() {
+            tuneUp.classList.remove('hidden');
+	        tuneUp.classList.add('show');
+            alert("Car is ready to go!");
+            this.isWorking = true;
+          },
+  
+          honk: function() {
+            honk.classList.remove('hidden');
+	        honk.classList.add('show');
+            alert("Honk! Honk!");
+          }
+        };
+        </script>
+
+
+
+    <!-- <script type="text/javascript">
+        var computerChoices = ["rock", "paper", "scissors"];
+        var rock = document.getElementById("rock");
+        var paper = document.getElementById("paper");
+        var scissors = document.getElementById("scissors");
+
+
+        function sleep(delay) {
+            var start = new Date().getTime();
+            while (new Date().getTime() < start + delay);
+        }
+
+        function chooseRock() {
+            var userChoice = "rock"
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            alert("User guess: " + userChoice);
+            alert("Computer guess: " + computerGuess);
+            if (computerGuess === "rock ") {
+                alert("It 's a tie! Rock sits calmly next to rock.");
+            }
+            if (computerGuess === "paper") {
+                alert("You lose! Paper covers rock.");
+            }
+            if (computerGuess === "scissors") {
+                alert("You win! Rock smashes scissors.");
+            }
+        }
+
+        function choosePaper() {
+            var userChoice = "paper"
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            alert("User guess: " + userChoice);
+            alert("Computer guess: " + computerGuess);
+            if (computerGuess === "rock") {
+                alert("You win! Paper covers rock.");
+            }
+            if (computerGuess === "paper") {
+                alert("It's a tie! Paper covers paper and that 's OK.");
+            }
+            if (computerGuess === "scissors") {
+                alert("You lose! Scissors cut paper.");
+            }
+        }
+
+        function chooseScissors() {
+            var userChoice = "scissors"
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            alert("User guess: " + userChoice);
+            alert("Computer guess: " + computerGuess);
+            if (computerGuess === "rock") {
+
+                alert("You lose! Rock smashes scissors.");
+            }
+            if (computerGuess === "paper") {
+                alert("You win! Scissors cut paper.");
+            }
+            if (computerGuess === "scissors") {
+                alert("It's a tie! Scissors scissor scissors and to some that is what love is. ");
+            }
+        }
+
+        // document.onkeyup = function(sausageMcMuffin) {
+
+        //     var userGuess = sausageMcMuffin.key;
+
+        //     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        // if (userGuess == "r " || userGuess == "R ") {
+        //     alert("User Guess: Rock ");
+        //     alert("Computer Guess: " + computerGuess);
+        //     if (computerGuess === "rock ") {
+        //         alert("It 's a tie! Rock sits calmly next to rock.")
+        //     }
+        //     if (computerGuess === "paper") {
+        //         alert("You lose! Rock covers paper.");
+        //     }
+        //     if (computerGuess === "scissors") {
+        //         alert("You win! Rock smashes scissors.");
+        //     }
+        // }
+
+        //     if (userGuess == "p" || userGuess == "P") {
+        //         alert("User Guess: Paper");
+        //         alert("Computer Guess: " + computerGuess);
+        //         if (computerGuess === "rock") {
+        //             alert("You win! Paper covers rock.");
+        //         }
+        //         if (computerGuess === "paper") {
+        //             alert("It's a tie! Paper covers paper and that 's OK.");
+        //         }
+        //         if (computerGuess === "scissors") {
+        //             alert("You lose! Scissors cut paper.");
+        //         }
+        //     }
+        //     if (userGuess == "s" || userGuess == "S") {
+        //         alert("User Guess: Scissors");
+        //         alert("Computer Guess: " + computerGuess);
+        //         if (computerGuess === "rock") {
+        //             alert("You lose! Rock smashes scissors.");
+        //         }
+        //         if (computerGuess === "paper") {
+        //             alert("You win! Scissors cut paper.");
+        //         }
+        //         if (computerGuess === "scissors") {
+        //             alert("It's a tie! Scissors scissor scissors and to some that is what love is. ");
+        //         }
+        //     }
+
+        //     for (var i = 0; i < computerChoices.length; i++) {
+        //         console.log(computerChoices[i]);
+        //     }
+        // }
+    </script> -->
+</body>
+
+</html>
