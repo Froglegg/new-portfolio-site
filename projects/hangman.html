@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat|Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7b1798d8eb.js" async defer></script>
+    <script src="scripts/nav.js" async defer></script>
+    <script src="../scripts/hangman.js" async defer></script>
+    <style>
+    .hangManImage {
+        width:100%;
+        height: auto;
+    }
+    #hangMan {
+        width:400px;
+    }
+
+    </style>
+</head>
+
+<body onload="reset()">
+    <article id="main">
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+    <h1>HANGMAN GAME</h1>
+    <h2>Can you guess the name of these nefarious creatures?</h2>
+    <h2>Press any key to get started</h2>
+    <div id="wins"></p>
+    <div id="currentWord"></div>
+    <div id="hint"></div>
+    <div id="counter"></div>
+    <p>Letters Already Guessed</p>
+    <div id="lettersGuessed"></div>
+    <p>Hint: </p>
+    <div id="hint"></div>
+    <p>Status: </p>
+    <div id="status"></div>
+    <div id="wins"></div>
+    <div id="losses"></div>
+</div>
+<div class="col">
+    <div id="hangMan"></div>
+    <button ID="reset" onclick="reset()">Start Over</Button>
+    </div>
+    </div>
+        </article>
+</body>
+
+</html>
