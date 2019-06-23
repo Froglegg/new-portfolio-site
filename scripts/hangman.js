@@ -1,3 +1,24 @@
+var images = [];
+
+function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+
+//-- usage --//
+preload(
+    "../images/hangman-reset.jpg",
+    "../images/hangman-dead.jpg",
+    "../images/hangman-1.jpg",
+    "../images/hangman-2.jpg",
+    "../images/hangman-3.jpg",
+    "../images/hangman-4.jpg",
+    "../images/hangman-5.jpg",
+    "../images/hangman-6.jpg"
+)
+
 var wordList = [
     "zombie",
     "vampire",
@@ -65,69 +86,68 @@ function containsAny(source, target) {
 }
 
 document.onkeyup = function(keyPress) {
-    document.getElementById("status").innerHTML = "<p> </p>";
-    var userGuess = keyPress.key.toLowerCase();
-    var everyLetterGuessed = lettersGuessedList.push(" " + userGuess);
-    document.getElementById("lettersGuessed").innerHTML = "<p>Letters guessed: " + lettersGuessedList + "</p>";
-    for (var i = 0; i < randomWord.length; i++) {
-        if (randomWord[i] == userGuess) {
-            answerArray[i] = userGuess;
-        } 
-    }
-    if (containsAny(answerArray, userGuess) == true){
-        userDoingOk == true;
-    }
-    else {
-        userDoingOk == false;
-        count--;
-    }
+        document.getElementById("status").innerHTML = "<p> </p>";
+        var userGuess = keyPress.key.toLowerCase();
+        var everyLetterGuessed = lettersGuessedList.push(" " + userGuess);
+        document.getElementById("lettersGuessed").innerHTML = "<p>Letters guessed: " + lettersGuessedList + "</p>";
+        for (var i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] == userGuess) {
+                answerArray[i] = userGuess;
+            }
+        }
+        if (containsAny(answerArray, userGuess) == true) {
+            userDoingOk == true;
+        } else {
+            userDoingOk == false;
+            count--;
+        }
 
-    var theAnswer = answerArray.join("");
-    document.getElementById("counter").innerHTML = "<p>No of guesses remaining: " + count + "</p>";
-    document.getElementById("currentWord").innerHTML = answerArray.join(" ");
+        var theAnswer = answerArray.join("");
+        document.getElementById("counter").innerHTML = "<p>No of guesses remaining: " + count + "</p>";
+        document.getElementById("currentWord").innerHTML = answerArray.join(" ");
 
-    if (count == 6){
-        hangMan.innerHTML = "<img src='../images/hangman-1.jpg' class='hangManImage'>";
-    }
-    if (count == 5){
-        hangMan.innerHTML = "<img src='../images/hangman-2.jpg' class='hangManImage'>";
-        
-    }
-    if (count == 4){
-        hangMan.innerHTML = "<img src='../images/hangman-3.jpg' class='hangManImage'>";
+        if (count == 6) {
+            hangMan.innerHTML = "<img src='../images/hangman-1.jpg' class='hangManImage'>";
+        }
+        if (count == 5) {
+            hangMan.innerHTML = "<img src='../images/hangman-2.jpg' class='hangManImage'>";
 
-        
-    }
-    if (count == 3){
-        hangMan.innerHTML = "<img src='../images/hangman-4.jpg' class='hangManImage'>";
-
-        
-    }
-    if (count == 2){
-        hangMan.innerHTML = "<img src='../images/hangman-5.jpg'class='hangManImage'>";
-
-        
-    }
-    if (count == 1){
-        hangMan.innerHTML = "<img src='../images/hangman-6.jpg' class='hangManImage'>";
-
-    }
+        }
+        if (count == 4) {
+            hangMan.innerHTML = "<img src='../images/hangman-3.jpg' class='hangManImage'>";
 
 
-    if (count < 4){
-        document.getElementById("hint").innerHTML = "<p>Hint: " + hint + " </p>";
-    }
+        }
+        if (count == 3) {
+            hangMan.innerHTML = "<img src='../images/hangman-4.jpg' class='hangManImage'>";
 
-    if ( count <= 0) {
-        document.getElementById("status").innerHTML = "<p> you die!!!</p>";
-        hangMan.innerHTML = "<img src='../images/hangman-dead.jpg' class='hangManImage'>";
-        losses++;
-        reset();
 
-    } else if (containsAny(wordList, theAnswer) == true) {
-        document.getElementById("status").innerHTML = "<p> you win!!!</p>";
-        wins++;
-        reset();
-    } 
+        }
+        if (count == 2) {
+            hangMan.innerHTML = "<img src='../images/hangman-5.jpg'class='hangManImage'>";
 
-}
+
+        }
+        if (count == 1) {
+            hangMan.innerHTML = "<img src='../images/hangman-6.jpg' class='hangManImage'>";
+
+        }
+
+
+        if (count < 5 {
+                document.getElementById("hint").innerHTML = "<p>Hint: " + hint + " </p>";
+            }
+
+            if (count <= 0) {
+                document.getElementById("status").innerHTML = "<p> you die!!!</p>";
+                hangMan.innerHTML = "<img src='../images/hangman-dead.jpg' class='hangManImage'>";
+                losses++;
+                reset();
+
+            } else if (containsAny(wordList, theAnswer) == true) {
+                document.getElementById("status").innerHTML = "<p> you win!!!</p>";
+                wins++;
+                reset();
+            }
+
+        }
