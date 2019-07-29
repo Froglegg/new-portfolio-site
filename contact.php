@@ -42,6 +42,9 @@
         <h1>Contact</h1>
     </div>
     <article id="main">
+    <?php echo "<p style='color:red'>$message</p>";
+
+?>
         <div>
 
             <form id="contactform" action="contact.php" method="post">
@@ -66,6 +69,28 @@
         <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
         <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
     </footer>
+    <?php
+if ($_POST){
+if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){
+$message="Please provide a correct email address";} else {
+  $name = strip_tags($_POST['name']);
+  $company_name = strip_tags($_POST['company_name']);
+  $email = $_POST['email'];
+  $comments = strip_tags($_POST['comments']);
+  $to = 'hayescrowley@gmail.com';
+  $subject = 'Contact from site visitor.';
+  $body = "\n Name: " .$name. "\n\n Comments: " .$comments. "\n\n Email: " .$email;
+  $headers = 'From: contact_form@hayescrowley.com';
+  $headers = "MIME-Version: 1.0\r\n";
+  $headers = "Content-Type: text/html; charset=utf-8\r\n";
+  $headers= "X-Priority: 1\r\n";
+  if (mail($to, $subject, $body, $headers)) {
+  echo "<p1>Thanks $name for reaching out! Look for my response at $email soon! </p1>";
+  } else {
+  $message = 'Sorry an error occurred. Please try again later.';
+  }
+  }}
+?>
 </body>
 
 </html>
