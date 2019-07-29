@@ -63,7 +63,9 @@ a:active {
 #main {
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 section {
@@ -82,14 +84,6 @@ section {
 }
 
 
-/* sticky footer from old site */
-
-
-/* .push {
-    height: 50px;
-  } */
-
-
 /* Images */
 
 #profile-image {
@@ -97,28 +91,17 @@ section {
     width: 80%;
 }
 
-
-/* Footer  */
-
-footer.fixed {
-    position: fixed;
-    left: 0;
+footer {
     bottom: 0;
     width: 100%;
+    /* height: 3rem; */
     background-color: rgb(34, 34, 34);
     color: lightskyblue;
     text-align: center;
-}
-
-footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-height: 11vh;
-    background-color: rgb(34, 34, 34);
-    color: lightskyblue;
 }
 
 
@@ -136,9 +119,6 @@ footer {
     }
     section {
         margin: 5px 0px 15px 0px;
-    }
-    footer {
-        min-height: 12vh;
     }
 }
 
