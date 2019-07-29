@@ -63,13 +63,7 @@
             </form>
 
         </div>
-    </article>
-    <footer>
-        <br>
-        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
-        <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
-    </footer>
-    <?php
+        <?php
 if ($_POST){
 if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){
 $message="Please provide a correct email address";} else {
@@ -91,6 +85,13 @@ $message="Please provide a correct email address";} else {
   }
   }}
 ?>
+    </article>
+    <footer>
+        <br>
+        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
+        <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
+    </footer>
+
 </body>
 
 </html>
