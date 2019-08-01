@@ -87,6 +87,7 @@ section {
 #profile-image {
     height: auto;
     width: 80%;
+    animation: slideInFromRight 2s ease;
 }
 
 footer {
@@ -100,6 +101,13 @@ footer {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+}
+
+span.icons {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    
 }
 
 
@@ -152,4 +160,28 @@ footer {
     color: #17252A;
     font-family: 'Karla', sans-serif;
     line-height: 29px;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

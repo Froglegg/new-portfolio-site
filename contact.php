@@ -24,7 +24,7 @@
             <li><a href="index.html">About</a></li>
             <li><a href="cv.html">Resumé</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="burger">
             <div class="line1">

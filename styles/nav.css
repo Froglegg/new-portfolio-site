@@ -26,7 +26,7 @@ nav {
 nav a {
     color: rgb(245, 245, 245);
     text-decoration: none;
-    transition: .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 nav a:hover {
@@ -36,6 +36,14 @@ nav a:hover {
 .nav-links li {
     list-style: none;
     margin-top:10px;
+}
+
+#git-icon {
+    margin-top:0px;
+    transition: all 0.3s ease-in-out;
+}
+#git-icon:hover {
+    transform: scale(1.1);
 }
 
 .burger {
