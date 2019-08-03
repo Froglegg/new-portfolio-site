@@ -78,7 +78,7 @@ $message="Please provide a correct email address";} else {
   $headers = "Content-Type: text/html; charset=utf-8\r\n";
   $headers= "X-Priority: 1\r\n";
   if (mail($to, $subject, $body, $headers)) {
-  echo "<p1>Thanks $name for reaching out! Look for my response at $email soon! </p1>";
+  echo "<p style='margin-top:15px;margin-bottom:15px;'>Thanks $name for reaching out! Look for my response at $email soon! </p>";
   } else {
   $message = 'Sorry an error occurred. Please try again later.';
   }
