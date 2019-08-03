@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Contact | Hayes Crowley</title>
-    <meta name="description" content="Hayes Crowley - Web Developer, Technical Writer, Hiker Trash, Musician">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hayes Crowley - Web Developer, Technical Writer, Hiker Trash, Musician">maximum-scale=1.0, user-scalable=no
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"> 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -21,7 +21,6 @@
             <h4><a href="index.html">Hayes Crowley</a></h4>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">About</a></li>
             <li><a href="cv.html">Resumé</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.php">Contact</a></li>
@@ -88,7 +87,9 @@ $message="Please provide a correct email address";} else {
     </article>
     <footer>
         <br>
-        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x"></i></a>
+        <span class="icons">
+        <a href="https://www.github.com/froglegg"><i class="fab fa-github fa-2x" id="git-icon"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/hayes-crowley/"><i class="fab fa-linkedin-in fa-2x" id="git-icon"></i></a></span>
         <p style="font-size:.8em;">Made with 100% organic, free-range code!</p>
     </footer>
 
