@@ -5,19 +5,18 @@
         var contactData = {
             name: $("#name").val().trim(),
             email: $("#email").val().trim(),
-            message: $("#message").val.trim()
+            message: $("#message").val().trim()
         };
 
-        if (validate(newBurger.burger_name)) {
-            // Send the POST request.
-            $.ajax("/contact", {
-                type: "POST",
-                data: contactData
-            }).then(
-                function() {
-                }
-            );
-        } else {
-            alert("Please validate here");
-        }
+        // Send the POST request.
+        $.ajax("/contactForm", {
+            type: "POST",
+            data: contactData
+        }).then(
+            function() {
+                console.log(`contact data is ${contactData}`);
+                
+            }
+        );
+
     });

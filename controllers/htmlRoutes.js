@@ -25,6 +25,10 @@ router.get("/contact", function(req, res) {
     res.send("contact.html");
 });
 
+router.get("/test", (req, res) => {
+    res.render("test");
+});
+
 
 // Export routes for server.js to use.
 module.exports = router;
