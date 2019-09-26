@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const nodemailer = require('nodemailer')
+
 var express = require("express");
 
 var PORT = process.env.PORT || 8080;
@@ -27,8 +29,10 @@ app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/htmlRoutes");
+var contactRoute = require("./controllers/contactRoute");
 
 app.use(routes);
+app.use(contactRoute);
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
