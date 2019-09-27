@@ -12,63 +12,66 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 const GMAIL_USER = process.env.GMAIL_USER;
 
-// instantiate oauth2Client
-const oauth2Client = new OAuth2(
-  `${CLIENT_ID}`, // ClientID
-  `${CLIENT_SECRET}`, // Client Secret
-  "https://developers.google.com/oauthplayground" // Redirect URL
-);
-
-// set credentials and get new access token... should all of this be going into the route, so a new access token is generated with each post?
-oauth2Client.setCredentials({
-  refresh_token: `${REFRESH_TOKEN}`
-});
-
-
 // POST route from contact form
 router.post('/contactForm', (req, res) => {
 
-// testing with this here
-const accessToken = oauth2Client.getAccessToken();
+    // instantiate oauth2Client
+    const oauth2Client = new OAuth2(
+        `${CLIENT_ID}`, // ClientID
+        `${CLIENT_SECRET}`, // Client Secret
+        "https://developers.google.com/oauthplayground" // Redirect URL
+    );
 
-// Instantiate the SMTP server, bringing in nodemaler
-const smtpTransport = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-       type: "OAuth2",
-       user: `${GMAIL_USER}`, 
-       clientId: `${CLIENT_ID}`,
-       clientSecret: `${CLIENT_SECRET}`,
-       refreshToken: `${REFRESH_TOKEN}`,
-       accessToken: accessToken
-  }
-});
+    // set credentials and get new access token... should all of this be going into the route, so a new access token is generated with each post?
+    oauth2Client.setCredentials({
+        refresh_token: `${REFRESH_TOKEN}`
+    });
+
+    // testing with this here
+    let accessToken = oauth2Client.getAccessToken();
+
+    console.log(accessToken);
+
+    // console log for debugging
+    console.log(`ClientID: ${CLIENT_ID}\nSecret: ${CLIENT_SECRET}\n Refresh: ${REFRESH_TOKEN}\n User: ${GMAIL_USER}\n Access token: ${accessToken}`);
+
+    // Instantiate the SMTP server, bringing in nodemaler
+    const smtpTransport = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            type: "OAuth2",
+            user: `${GMAIL_USER}`,
+            clientId: `${CLIENT_ID}`,
+            clientSecret: `${CLIENT_SECRET}`,
+            refreshToken: `${REFRESH_TOKEN}`,
+            accessToken: accessToken
+        }
+    });
 
     // Specify what the email will look like
     const mailOpts = {
-      from: 'Your sender info here', // This is ignored by Gmail
-      to: GMAIL_USER,
-      subject: 'New message from contact form at hayescrowley.com',
-      generateTextFromHTML: true,
-      text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+        from: '', // This is ignored by Gmail
+        to: GMAIL_USER,
+        subject: `CONTACT from ${req.body.name}`,
+        generateTextFromHTML: true,
+        text: `${req.body.name} (${req.body.email}) says: \n\n${req.body.message}`
     };
-  
+
     // Attempt to send the email
     smtpTransport.sendMail(mailOpts, (error, response) => {
-      if (error) {
-        console.log(error);
-        let errorObj = {error: error};
-        console.log(errorObj);
-        res.render('contact-failure', errorObj ) // Show a page indicating failure
-      }
-      else {
-        console.log(response);
-        let responseObj = {reponse: response};
-        res.render('contact-success', responseObj); // Show a page indicating success
-      }
-      smtpTransport.close();
+        if (error) {
+            console.log(error);
+            let errorObj = { error: error };
+            console.log(errorObj);
+            res.render('contact-failure', errorObj) // Show a page indicating failure
+        } else {
+            console.log(response);
+            let responseObj = { reponse: response };
+            res.render('contact-success', responseObj); // Show a page indicating success
+        }
+        smtpTransport.close();
     });
 
-  });
+});
 
-  module.exports = router;
+module.exports = router;
