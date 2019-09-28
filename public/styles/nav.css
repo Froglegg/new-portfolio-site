@@ -76,8 +76,14 @@ nav a:hover {
         opacity: 0;
     }
     .burger {
-        display: block;
         cursor: pointer;
+    }
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: rgb(226, 226, 226);
+        margin: 5px;
+        transition: all 0.3s ease;
     }
 }
 
