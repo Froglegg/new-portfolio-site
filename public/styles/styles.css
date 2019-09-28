@@ -1,3 +1,14 @@
+@charset "utf-8";
+body {
+    background-color: whitesmoke;
+    font-family: 'karla', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    color: #17252A;
+}
+
+
 /* global fonts*/
 
 p {
@@ -5,6 +16,7 @@ p {
     font-size: 16px;
     line-height: 1.4;
     letter-spacing: 0.1em;
+    color: #17252A;
 }
 
 h1 {
@@ -12,29 +24,34 @@ h1 {
     font-size: 32px;
     letter-spacing: 0.1em;
     font-weight: 600;
+    color: #17252A;
 }
 
 h2 {
     font-family: 'montserrat', sans-serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.1em;
+    color: #17252A;
 }
+
+
 /* links */
 
 a {
-    color: lightseagreen;
+    color: #1e90ff;
     font-weight: 600;
     text-decoration: none;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
+    font-family: 'poppins', sans-serif;
 }
 
 a:hover {
-    color: rgb(41, 214, 206);
+    color: #72BAFF
 }
 
 a:active {
-    color: rgb(41, 214, 206);
+    color: #72BAFF
 }
 
 
@@ -87,7 +104,7 @@ section {
 #profile-image {
     height: auto;
     width: 80%;
-    animation: slideInFromRight 2s ease;
+    animation: slideInFromRight 1s ease;
 }
 
 footer {
@@ -95,7 +112,7 @@ footer {
     width: 100%;
     /* height: 3rem; */
     background-color: rgb(34, 34, 34);
-    color: lightskyblue;
+    color: dodgerblue;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -104,10 +121,9 @@ footer {
 }
 
 span.icons {
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-direction: row;
-    
 }
 
 
@@ -132,34 +148,48 @@ span.icons {
 /* Accordion styles */
 
 .accordion {
-    background-color: #3AAFA9;
+    background-color: rgba(255, 143, 30, 0.925);
     color: #17252A;
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: 2px solid #2B7A78;
+    border-bottom: 2px solid #201204;
     text-align: left;
     outline: none;
-    transition: 0.4s;
-    font-family: 'Karla', sans-serif;
+    transition: 0.2s;
     font-size: 18px;
-    font-weight: normal;
-    line-height: 29px;
+}
+
+.accordion.last-item {
+    border: none!important;
 }
 
 .active,
 .accordion:hover {
-    background-color: #DEF2F1;
+    background-color: #FFC71E;
+    color: black;
+}
+
+.accordion h2:before {
+    content: "\25b9";
+    margin: 0 1em;
+    font-size: 1.1em;
+    color: rgb(18, 81, 145);
+}
+
+.accordion.active h2:before {
+    content: "\25be";
+    margin: 0 1em;
+    font-size: 1.1em;
+    color: #8F1EFF;
 }
 
 .panel {
     padding: 0 18px;
     display: none;
-    background-color: #3AAFA9;
+    background-color: #FFC71E;
     overflow: hidden;
-    color: #17252A;
-    font-family: 'Karla', sans-serif;
-    line-height: 29px;
+    color: rgb(32, 42, 23);
 }
 
 @keyframes slideInFromLeft {
@@ -167,7 +197,6 @@ span.icons {
         opacity: 0;
         transform: translateX(-100%);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -179,9 +208,29 @@ span.icons {
         opacity: 0;
         transform: translateX(100%);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.button-1 {
+    border-radius: 50px;
+    color: #17252A;
+    border: 3px solid #262636;
+    background-color: whitesmoke;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .15s ease-in-out;
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin: 10px 15px 10px 15px;
+    text-transform: uppercase;
+}
+
+.button-1:hover {
+    color: whitesmoke;
+    background-color: lightseagreen;
 }

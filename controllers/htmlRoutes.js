@@ -10,23 +10,39 @@ var router = express.Router();
 // let db = require('./../models');
 
 router.get("/", (req, res) => {
-    res.send("index.html");
+    res.render("index", {
+        styles: ["normalize.css", "nav.css", "styles.css"],
+        headScripts: ["nav.js"],
+        bodyScripts: [],
+        title: "About | Hayes Crowley"
+    });
 });
 
 router.get("/cv", function(req, res) {
-    res.send("cv.html");
+    res.render("cv", {
+        styles: ["normalize.css", "nav.css", "styles.css"],
+        headScripts: ["nav.js"],
+        bodyScripts: ["accordion.js"],
+        title: "Resumé | Hayes Crowley"
+    });
 });
 
 router.get("/portfolio", function(req, res) {
-    res.send("portfolio.html");
+    res.render("portfolio", {
+        styles: ["normalize.css", "nav.css", "styles.css"],
+        headScripts: ["nav.js"],
+        bodyScripts: ["accordion.js"],
+        title: "Portfolio | Hayes Crowley"
+    });
 });
 
 router.get("/contact", function(req, res) {
-    res.send("contact.html");
-});
-
-router.get("/test", (req, res) => {
-    res.render("test");
+    res.render("contact", {
+        styles: ["normalize.css", "nav.css", "styles.css", "contact.css"],
+        headScripts: ["nav.js"],
+        bodyScripts: ["contact.js"],
+        title: "Contact | Hayes Crowley"
+    });
 });
 
 

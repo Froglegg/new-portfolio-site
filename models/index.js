@@ -1,3 +1,5 @@
+// sequelize configuration
+
 "use strict";
 
 var fs = require("fs");

@@ -8,10 +8,10 @@ nav {
 }
 
 .logo {
-    color: rgb(226, 226, 226);
+    color: whitesmoke;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nav-links {
@@ -24,39 +24,29 @@ nav {
 }
 
 nav a {
-    color: rgb(245, 245, 245);
+    color: whitesmoke;
     text-decoration: none;
     transition: all .3s ease-in-out;
 }
 
 nav a:hover {
-    color: rgb(50, 255, 245);
+    color: #72BAFF;
+    transform: scale(1.1);
 }
 
 .nav-links li {
     list-style: none;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 #git-icon {
-    margin-top:0px;
-    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    transition: all 0.2s ease-out;
 }
+
 #git-icon:hover {
+    color: #72BAFF;
     transform: scale(1.1);
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: rgb(226, 226, 226);
-    margin: 5px;
-    transition: all 0.3s ease;
 }
 
 @media only screen and (max-width:1024px) {

@@ -61,13 +61,20 @@ router.post('/contactForm', (req, res) => {
     smtpTransport.sendMail(mailOpts, (error, response) => {
         if (error) {
             console.log(error);
-            let errorObj = { error: error };
-            console.log(errorObj);
-            res.render('contact-failure', errorObj) // Show a page indicating failure
+            res.render('contact-failure', {
+                    styles: ["normalize.css", "nav.css", "styles.css"],
+                    headScripts: ["nav.js"],
+                    bodyScripts: [],
+                    title: "Contact Failure :("
+                }) // Show a page indicating failure
         } else {
             console.log(response);
-            let responseObj = { reponse: response };
-            res.render('contact-success', responseObj); // Show a page indicating success
+            res.render('contact-success', {
+                styles: ["normalize.css", "nav.css", "styles.css"],
+                headScripts: ["nav.js"],
+                bodyScripts: [],
+                title: "Contact Success!"
+            }); // Show a page indicating success
         }
         smtpTransport.close();
     });
