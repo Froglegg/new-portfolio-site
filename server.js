@@ -20,8 +20,8 @@ var exphbs = require("express-handlebars");
 var hbsHelpers = require("./helpers/handlebarHelpers");
 
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main', 
-  helpers: hbsHelpers
+    defaultLayout: 'main',
+    helpers: hbsHelpers
 }));
 
 app.set('view engine', 'handlebars');
@@ -30,11 +30,10 @@ app.set('view engine', 'handlebars');
 // var db = require("./models");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/htmlRoutes");
-var contactRoute = require("./controllers/contactRoute");
+var routes = require("./routes/index");
 
 app.use(routes);
-app.use(contactRoute);
+
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
