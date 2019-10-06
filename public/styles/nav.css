@@ -57,15 +57,15 @@ nav a:hover {
 
 @media only screen and (max-width: 768px) {
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
   .nav-links {
     position: absolute;
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: dodgerblue;
-    display: flex;
+    background-color: rgba(30, 143, 255, 0.904);
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 50%;
@@ -88,6 +88,7 @@ nav a:hover {
 }
 
 .nav-active {
+  display: flex;
   transform: translateX(0%);
 }
 
