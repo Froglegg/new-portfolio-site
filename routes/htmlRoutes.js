@@ -26,11 +26,6 @@ router.get("/cv", function(req, res) {
   });
 });
 
-router.get("/downloadCV", function(req, res) {
-  const file = `${__dirname}/hayes-crowley-resume.pdf`;
-  res.download(file); // Set disposition and send it.
-});
-
 router.get("/portfolio", function(req, res) {
   res.render("portfolio", {
     styles: ["normalize.css", "nav.css", "styles.css"],
