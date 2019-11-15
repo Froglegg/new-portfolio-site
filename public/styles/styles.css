@@ -148,7 +148,7 @@ span.icons {
 /* Accordion styles */
 
 .accordion {
-    background-color: rgba(255, 143, 30, 0.925);
+    background-color: whitesmoke;
     color: #17252A;
     cursor: pointer;
     padding: 18px;

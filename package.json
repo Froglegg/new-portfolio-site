@@ -23,6 +23,7 @@
     "express-handlebars": "^3.1.0",
     "googleapis": "^43.0.0",
     "handlebars": "^4.5.1",
+    "micromodal": "^0.4.2",
     "mysql2": "^1.7.0",
     "nodemailer": "^6.3.0",
     "nodemon": "^1.19.2",

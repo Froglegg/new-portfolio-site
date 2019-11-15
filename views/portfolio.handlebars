@@ -6,11 +6,12 @@
 
         <div class="accordion"><h2>Digital Projects</h2></div>
 
+
         <div class="panel">
             <form>
 
                 <br>
-                <input class="accordion-item button-1" type="button" value="StyleFish" onclick="window.open('https://style-fish.herokuapp.com/','_self')" />
+                <input class="accordion-item button-1" type="button" value="StyleFish" onclick="MicroModal.show('styleFish-modal')" />
 
                 <input class="accordion-item button-1" type="button" value="MERN Google Books" onclick="window.open('https://the-bookster.herokuapp.com/','_self')" />
 
@@ -104,4 +105,38 @@
 
         </div>
         <br><br>
+
+    <div class="modal micromodal-slide" id="styleFish-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">
+           StyleFish
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <p>
+              StyleFish is a MERN-stack application for folks who want to up their fashion game. Sign up, pick a starter clothing item, and StyleFish will generate an outfit that you can then save to your closet. Check out other users' closets and save them to your own closet.
+
+<img src="/images/project-gifs/styleFish.gif" style="width:100%;"/>
+
+<h3>Technologies Used</h3>
+<ul>
+    <li>MERN (Mongoose, Express, React, Node)</li>
+    <li>JSON Web Tokens</li>
+    <li>Socket.io</li>
+    <li>Axios</li>
+    <li>MDB (Bootstrap UI Kit and Animations)</li>
+</ul>
+          </p>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn modal__btn-primary"><a href="https://github.com/Froglegg/Style-Fish">Git Repo</a></button>
+          <button class="modal__btn modal__btn-primary"><a href="https://style-fish.herokuapp.com/">Deployed Application</a></button>
+          <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+        </footer>
+      </div>
+    </div>
+  </div>
     </article>

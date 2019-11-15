@@ -28,9 +28,9 @@ router.get("/cv", function(req, res) {
 
 router.get("/portfolio", function(req, res) {
   res.render("portfolio", {
-    styles: ["normalize.css", "nav.css", "styles.css"],
+    styles: ["normalize.css", "nav.css", "styles.css", "modal-styles.css"],
     headScripts: ["nav.js"],
-    bodyScripts: ["accordion.js"],
+    bodyScripts: ["accordion.js", "microModal.min.js"],
     title: "Portfolio | Hayes Crowley"
   });
 });

@@ -1,54 +1,54 @@
-input[type=text],
+input[type="text"],
 select,
 textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #201204;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: 'karla', sans-serif;
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: 0.1em;
-    color: #17252A;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #201204;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: "karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: #17252a;
 }
 
-input[type=email] {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #201204;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: 'karla', sans-serif;
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: 0.1em;
-    color: #17252A;
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #201204;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: "karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: #17252a;
 }
 
-input[type=submit] {
-    background-color: rgba(255, 143, 30, 0.925);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="submit"] {
+  background-color: whitesmoke;
+  padding: 12px 20px;
+  border: 2px solid #201204;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #FFC71E;
-    color: black;
+input[type="submit"]:hover {
+  background-color: #ffc71e;
+  color: black;
 }
 
 input[value] {
-    font-family: 'karla', sans-serif;
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: 0.1em;
-    color: #17252A;
+  font-family: "karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: #17252a;
 }
