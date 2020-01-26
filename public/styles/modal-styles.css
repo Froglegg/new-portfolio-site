@@ -77,7 +77,7 @@
   text-transform: none;
   overflow: visible;
   line-height: 1.15;
-  margin: 0;
+  margin-top: 10px;
   will-change: transform;
   -moz-osx-font-smoothing: grayscale;
   -webkit-backface-visibility: hidden;
@@ -170,4 +170,8 @@
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
+}
+
+.modal__footer {
+  background-color: #fff;
 }
