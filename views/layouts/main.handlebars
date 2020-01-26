@@ -7,14 +7,18 @@
     <meta name="description" content="Hayes Crowley - Full Stack Web Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="/images/favicon/favicon.ico"/>
+    {{#each cdnScripts}}
+    <script src="{{this}}"></script>
+    {{/each}}
+    <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat|Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7b1798d8eb.js" async defer></script>
     {{#each styles}}
     <link rel="stylesheet" href="styles/{{this}}" type="text/css" charset="utf-8">
     {{/each}}
     {{#each headScripts}}
     <script src="scripts/{{this}}" async defer></script>
     {{/each}}
-    <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat|Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7b1798d8eb.js" async defer></script>
+
     
 </head>
 <body>
